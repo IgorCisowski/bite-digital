@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "../elements/button";
-import BurgerMenu from "./burgerMenu";
+import BurgerMenu from "../elements/burgerMenu";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,8 +12,8 @@ export default function Header() {
   };
 
   return (
-    <header className="relative w-full">
-      <nav className="flex items-center justify-between px-5 py-5 border-b-[1px] border-[#333]">
+    <header className="w-full">
+      <nav className="relative z-20 flex items-center justify-between px-5 py-5">
         <div>LOGO</div>
         <BurgerMenu handleOpen={handleOpen} isOpen={isOpen} />
         {/* MOBILE */}
@@ -40,7 +40,9 @@ export default function Header() {
           {navLinks.map(({ title, i, link }) => {
             return (
               <li key={i}>
-                <a href={`#${link}`}>{title}</a>
+                <a className="text-xl" href={`#${link}`}>
+                  {title}
+                </a>
               </li>
             );
           })}
