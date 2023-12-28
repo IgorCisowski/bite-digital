@@ -3,7 +3,7 @@ import BlackButton from "../elements/blackButton";
 
 export default function Hero() {
   return (
-    <section>
+    <section className="mb-40">
       <div className="pt-10 pl-5">
         <div className="text-5xl font-semibold mb-4 lg:text-7xl lg:mb-8">
           <h1 className="flex flex-col gap-y-3 mb-4">
