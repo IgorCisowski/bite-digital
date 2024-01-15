@@ -1,19 +1,24 @@
 import React from "react";
+import Websites from "./websites";
+import Webapps from "./webapps";
 
 export default function BusinessSupport() {
   return (
-    <section className="mb-40">
-      <div className="flex flex-col items-center gap-y-8">
-        <h2 className="text-3xl text-center font-semibold lg:text-6xl">
-          <p className="mb-2"> Jak wspieramy</p>
+    <section>
+      <div className="text-center space-y-4">
+        <h2 className="text-4xl">
+          <p> Jak wspieramy</p>
           <p>Twój biznes?</p>
         </h2>
-        <p className="text-center">
+        <p className="text-sm">
           Wspieramy Klientów z sektora małych i średnich
           <br /> firm w procesie tworzenia spersonalizownych
           <br /> produktów.
         </p>
       </div>
+
+      <Websites />
+      <Webapps />
     </section>
   );
 }

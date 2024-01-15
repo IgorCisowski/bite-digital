@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "../elements/button";
 import BurgerMenu from "../elements/burgerMenu";
+import logo from "../../images/logo.png";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +13,11 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full">
-      <nav className="relative z-20 flex items-center justify-between px-5 py-5">
-        <div>LOGO</div>
+    <header>
+      <nav className="relative z-50 flex justify-between items-center py-4">
+        <div className="object-cover w-1/4">
+          <img src={logo} alt="logo" />
+        </div>
         <BurgerMenu handleOpen={handleOpen} isOpen={isOpen} />
         {/* MOBILE */}
         <ul
@@ -22,32 +25,17 @@ export default function Header() {
             isOpen
               ? "translate-x-0 duration-300 "
               : "-translate-x-full duration-300 "
-          } flex flex-col justify-center px-5 absolute top-0 left-0 -z-10 w-full h-screen bg-black lg:hidden`}
+          } text-3xl flex flex-col justify-center gap-y-6 px-6 absolute -z-10 top-0 -left-6 w-screen h-screen bg-black lg:hidden`}
         >
           {navLinks.map(({ title, i, link }) => {
             return (
-              <li key={i} className="text-3xl mb-5" onClick={handleOpen}>
+              <li key={i} onClick={handleOpen}>
                 <a href={`#${link}`}>{title}</a>
               </li>
             );
           })}
-          <li className="text-3xl mb-5" onClick={handleOpen}>
+          <li onClick={handleOpen}>
             <a href="#Contact">Get in touch</a>
-          </li>
-        </ul>
-        {/* DESKTOP */}
-        <ul className="hidden lg:flex items-center gap-5">
-          {navLinks.map(({ title, i, link }) => {
-            return (
-              <li key={i}>
-                <a className="text-xl" href={`#${link}`}>
-                  {title}
-                </a>
-              </li>
-            );
-          })}
-          <li>
-            <Button>Get in touch</Button>
           </li>
         </ul>
       </nav>
@@ -61,3 +49,21 @@ const navLinks = [
   { title: "Case Study", link: "Case Study" },
   { title: "Cooperation", link: "Cooperation" },
 ];
+
+{
+  /* DESKTOP */
+}
+{
+  /* <ul className="hidden lg:flex items-center gap-6 text-sm">
+          {navLinks.map(({ title, i, link }) => {
+            return (
+              <li key={i}>
+                <a href={`#${link}`}>{title}</a>
+              </li>
+            );
+          })}
+          <Button>
+            <a href="#Contact">Get in touch</a>{" "}
+          </Button>
+        </ul> */
+}

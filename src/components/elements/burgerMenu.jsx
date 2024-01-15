@@ -28,7 +28,7 @@ const variantDown = {
 export default function BurgerMenu({ isOpen, handleOpen }) {
   return (
     <div
-      className="w-8 h-7 flex flex-col justify-around absolute right-5 lg:hidden"
+      className="w-8 h-7 flex flex-col justify-around lg:hidden"
       onClick={handleOpen}
     >
       <motion.div

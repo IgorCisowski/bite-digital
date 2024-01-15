@@ -1,15 +1,35 @@
 import "./Global.css";
-import BusinessSupport from "./components/ui/businessSupport";
 import Header from "./components/ui/header";
+import Footer from "./components/ui/footer";
+import heroBg from "./images/hero-bg.jpg";
 import Hero from "./components/ui/hero";
+import About from "./components/ui/about";
+import BusinessSupport from "./components/ui/businessSupport";
+import Specjalizacja from "./components/ui/specjalizacja";
+import Zyskujesz from "./components/ui/zyskujesz";
+import If from "./components/ui/if";
+import Try from "./components/ui/try";
 
 function App() {
   return (
-    <main className="w-full max-w-[1564px] mx-auto">
-      <Header />
-      <Hero />
-      <BusinessSupport />
-    </main>
+    <div className="relative">
+      <div className="absolute -z-20 top-0 left-0 w-full">
+        <img src={heroBg} alt="hero" />
+      </div>
+      <div className="wrapper px-6">
+        <Header />
+        <main>
+          <Hero />
+          <BusinessSupport />
+          <Specjalizacja />
+          <If />
+          <Try />
+          <Zyskujesz />
+          <About />
+        </main>
+        <Footer />
+      </div>
+    </div>
   );
 }
 
